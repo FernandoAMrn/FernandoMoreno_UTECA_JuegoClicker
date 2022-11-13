@@ -3,18 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class MonsterHP : MonoBehaviour
 {
+    public float health;
+    public float maxHealth;
+
+    public GameObject healthBarUI;
     public Slider slider;
-    
-    public void setMaxHP(int health)
+
+     void Start()
     {
-        slider.maxValue = health;
-        slider.value = health;
-    }    
-    public void setHealth(int health)
+        health = maxHealth;
+        slider.value = CalculateHealth();
+
+    }
+
+    private void Update()
     {
-        slider.value = health;
+        slider.value = CalculateHealth();
+
+        if (health < maxHealth)
+        {
+            healthBarUI.SetActive(true);
+        }
+
+        if (health <= 0 )
+        {
+            Destroy(this.gameObject);
+        }
+
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+    }
+
+    float CalculateHealth()
+    {
+        return health / maxHealth;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Damage")
+        {
+            health--;
+        }
     }
 }
