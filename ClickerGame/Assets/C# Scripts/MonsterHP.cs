@@ -10,6 +10,8 @@ public class MonsterHP : MonoBehaviour
 
     public GameObject healthBarUI;
     public Slider slider;
+    public GameObject loot;
+    public Transform deEnemy;
 
      void Start()
     {
@@ -30,6 +32,7 @@ public class MonsterHP : MonoBehaviour
         if (health <= 0 )
         {
             Destroy(this.gameObject);
+            DropLoot();
         }
 
         if (health > maxHealth)
@@ -49,5 +52,11 @@ public class MonsterHP : MonoBehaviour
         {
             health--;
         }
+    }
+
+    public void DropLoot()
+    {
+        Vector2 position = transform.position;
+        GameObject money = Instantiate(loot, position, Quaternion.identity);
     }
 }

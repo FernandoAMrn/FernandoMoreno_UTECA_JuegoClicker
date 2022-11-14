@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5983739146881507759}
   - component: {fileID: 5983739146881507756}
   - component: {fileID: 5983739146881507757}
-  - component: {fileID: 7043703766642922414}
+  - component: {fileID: 2414171586110349662}
   m_Layer: 0
   m_Name: Damage
   m_TagString: Damage
@@ -80,7 +80,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!114 &7043703766642922414
+--- !u!114 &2414171586110349662
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
