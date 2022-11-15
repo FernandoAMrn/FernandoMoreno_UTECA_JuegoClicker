@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MonsterDamage : MonoBehaviour
 {
-    public float speed = 50.0f;
-    private Rigidbody2D rb;
+    public float speed = 10.0f;
+    public Rigidbody2D rb;
     private Vector2 screenBounds;
 
     // Start is called before the first frame update

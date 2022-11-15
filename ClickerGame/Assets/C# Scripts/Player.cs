@@ -29,6 +29,11 @@ public class Player : MonoBehaviour
         {
             PHelathBarUI.SetActive(true);
         }
+
+        if (PHealth > PMaxHealth)
+        {
+            PHealth = PMaxHealth;
+        }
     }
 
     float PCalculateHealth()
@@ -52,7 +57,7 @@ public class Player : MonoBehaviour
     {
       if (other.tag == "MonsterDamage")
         {
-            _ = PHealth - 20;
+            PHealth--;
         }
     }
 

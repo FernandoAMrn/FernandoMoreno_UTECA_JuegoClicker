@@ -13,7 +13,10 @@ public class MonsterHP : MonoBehaviour
     
     public Transform deEnemy;
 
-    
+    [SerializeField]
+    private GameObject monsterDamage;
+    [SerializeField]
+    private float damageInterval = 5f;
 
     
 
@@ -21,7 +24,7 @@ public class MonsterHP : MonoBehaviour
     {
         health = maxHealth;
         slider.value = CalculateHealth();
-
+        StartCoroutine(spawnMonsterDmg(damageInterval, monsterDamage));
     }
 
     private void Update()
@@ -58,5 +61,13 @@ public class MonsterHP : MonoBehaviour
         }
     }
 
+    private IEnumerator spawnMonsterDmg (float interval, GameObject monsterDmg)
+    {
+        
+        yield return new WaitForSeconds(interval);
+        Vector3 position = transform.position; //posicion del enemigo
+        GameObject newEnemy = Instantiate(monsterDmg, position, Quaternion.identity);//spawnea el daño
+        StartCoroutine(spawnMonsterDmg(interval, monsterDmg)); //comienza la corrutina.
+    }
     
 }

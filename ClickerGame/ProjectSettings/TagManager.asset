@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Damage
   - Monster
+  - MonsterDamage
   layers:
   - Default
   - TransparentFX
