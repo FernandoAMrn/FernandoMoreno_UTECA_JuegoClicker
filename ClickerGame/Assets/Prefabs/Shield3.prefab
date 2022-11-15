@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5211762382312588205}
   - component: {fileID: -6186021568412480712}
   - component: {fileID: 4355340651426280056}
+  - component: {fileID: 7424910662486001665}
   m_Layer: 0
   m_Name: Shield3
   m_TagString: Untagged
@@ -172,3 +173,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.311697, y: 8.607816}
   m_EdgeRadius: 0
+--- !u!114 &7424910662486001665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948288836159817537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb8e9e8760f54e468b96eaba16dfdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: 8075800c49f6d464a947f94f38887635, type: 2}

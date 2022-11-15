@@ -10,8 +10,13 @@ public class Item_SO : ScriptableObject
     public string itemName;
     public int bonusHP;
     public int bonusDmg;
+    public int dropChance;
 
     public Sprite icon;
 
-    
+    public Item_SO(string itemName, int dropChance)
+    {
+        this.itemName = itemName;
+        this.dropChance = dropChance;
+    }
 }
