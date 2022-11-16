@@ -14,13 +14,25 @@ public class MonsterDamage : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0, -speed);
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        StartCoroutine(waiter());
     }
 
+    private void Update()
+    {
+       
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             Destroy(this.gameObject);
         }
+    }
+
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(3);
+        Object.Destroy(this.gameObject);
+
     }
 }

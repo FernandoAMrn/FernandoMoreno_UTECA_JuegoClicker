@@ -18,6 +18,8 @@ public class DamageBullet : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
 
+    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Monster")

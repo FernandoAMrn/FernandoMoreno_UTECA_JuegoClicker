@@ -1940,6 +1940,7 @@ GameObject:
   - component: {fileID: 642801066}
   - component: {fileID: 642801068}
   - component: {fileID: 642801069}
+  - component: {fileID: 642801070}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Player
@@ -2031,6 +2032,7 @@ MonoBehaviour:
   PMaxHealth: 100
   PHelathBarUI: {fileID: 709836454}
   PSlider: {fileID: 1597666906}
+  animator: {fileID: 642801070}
 --- !u!61 &642801069
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2057,6 +2059,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.407911, y: 4.6327}
   m_EdgeRadius: 0
+--- !u!95 &642801070
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642801065}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8e8763890d546c44ad6ddfb961e4afb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &694672339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5615,6 +5636,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 642801070}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Player_Defense
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1820663884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5925,8 +5958,9 @@ GameObject:
   - component: {fileID: 1865825532}
   - component: {fileID: 1865825533}
   - component: {fileID: 1865825534}
+  - component: {fileID: 1865825535}
   m_Layer: 0
-  m_Name: Demon_Windup
+  m_Name: Demon_Base
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5972,7 +6006,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 8a5c9c99513bd5b4192552c126b789c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ac16ad359197fa047b13a3fe28671fdc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6015,7 +6049,8 @@ MonoBehaviour:
   slider: {fileID: 1251353203}
   deEnemy: {fileID: 1865825531}
   monsterDamage: {fileID: 4411393823081433362, guid: 3a4dcd13bfe649247abf534a98a545e6, type: 3}
-  damageInterval: 5
+  damageInterval: 1.5
+  animator: {fileID: 1865825535}
 --- !u!61 &1865825533
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6060,6 +6095,25 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3b4baadcf80f20c4dbc39c756c3e77d3, type: 2}
   - {fileID: 11400000, guid: 8075800c49f6d464a947f94f38887635, type: 2}
   - {fileID: 11400000, guid: 34c22ce05c270fc4a81661adb87122dc, type: 2}
+--- !u!95 &1865825535
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865825529}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0981e8f7c43d88a4188d2851657cb2d5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1878085714
 GameObject:
   m_ObjectHideFlags: 0
@@ -7075,6 +7129,30 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 642801070}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Player_Attack
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1865825535}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Demon_Attacked
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2101604178

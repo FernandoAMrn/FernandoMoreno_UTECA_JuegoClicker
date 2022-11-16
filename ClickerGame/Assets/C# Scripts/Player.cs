@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
 
     public GameObject PHelathBarUI;
     public Slider PSlider;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         PSlider.value = PCalculateHealth();
         if (PHealth < PMaxHealth)
         {
@@ -34,6 +36,9 @@ public class Player : MonoBehaviour
         {
             PHealth = PMaxHealth;
         }
+
+
+        //StartCoroutine(shieldDown());
     }
 
     float PCalculateHealth()
@@ -50,8 +55,12 @@ public class Player : MonoBehaviour
 
     public void dodge()
     {
+        
         dodgeCollider.enabled = false;
+        
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -60,5 +69,11 @@ public class Player : MonoBehaviour
             PHealth--;
         }
     }
+
+    //IEnumerator shieldDown()
+    //{
+    //    yield return new WaitForSeconds(3);
+    //    dodgeCollider.enabled = true;
+    //}
 
 }

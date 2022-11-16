@@ -17,7 +17,7 @@ public class MonsterHP : MonoBehaviour
     private GameObject monsterDamage;
     [SerializeField]
     private float damageInterval = 5f;
-
+    public Animator animator;
     
 
      void Start()
@@ -63,7 +63,7 @@ public class MonsterHP : MonoBehaviour
 
     private IEnumerator spawnMonsterDmg (float interval, GameObject monsterDmg)
     {
-        
+        animator.SetBool("Attacking", true); 
         yield return new WaitForSeconds(interval);
         Vector3 position = transform.position; //posicion del enemigo
         GameObject newEnemy = Instantiate(monsterDmg, position, Quaternion.identity);//spawnea el daño
